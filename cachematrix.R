@@ -1,5 +1,5 @@
 ## ----- Programming Assignment 2 -----
-## instructions:
+## !instructions:
 ## source("cachematrix.R") when correct dir is set
 ## to use the list of makeCacheMatrix, use f<-makeCacheMatrix()
 ## you can use the functions in mCM as follow:
@@ -34,13 +34,18 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Return a matrix that is the inverse of 'x'
 cacheSolve <- function(x, ...) {
     invx <- x$getinv()
+
+## check is invx does exist and returned the cached matrix inverse
     if(!is.null(invx)){
         message("getting cached data")
         return(invx)
     }
-    data <- x$get()
-    invx <- solve(data, ...)
-    
-    x$setinv(invx)
-    invx
+## if invx is null then call solve to get data.
+    else{
+        data <- x$get()
+        invx <- solve(data, ...)
+        x$setinv(invx)
+        invx 
+    }
+
 }
