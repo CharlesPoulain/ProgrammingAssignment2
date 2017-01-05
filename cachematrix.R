@@ -3,7 +3,7 @@
 ## source("cachematrix.R") when correct dir is set
 ## to use the list of makeCacheMatrix, use f<-makeCacheMatrix()
 ## you can use the functions in mCM as follow:
-## f$set(x) f$get() f$setinv f$getinv()
+## f$set(x) f$get() f$setinv(matrixInverse) f$getinv()
 ## then set the matrix x to create the cache : f$set(x)
 ## then use cacheSolve(f) to return the matrix inverse
 
